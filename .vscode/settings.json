@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.api": "go",
+        "*.tpl": "go",
+        "*.html": "html",
+        "*.yaml": "yaml",
+        "*.t": "toml",
+        "stdio.h": "c"
+    }
+}
