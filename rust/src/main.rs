@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 use serde_json::Result;
-
+use std::time::{Duration, Instant};
 #[derive(Serialize, Deserialize)]
 struct Person {
     name: String,
@@ -26,7 +26,18 @@ fn typed_example() -> Result<()> {
     let p: Person = serde_json::from_str(data)?;
 
     // Do things just like with any other Rust data structure.
-    println!("Please call {} at the number {}", p.name, p.phones[0]);
+    // println!("Please call {} at the number {}", p.name, p.phones[0]);
 
     Ok(())
+}
+fn main() {
+    let now = Instant::now();
+    let N = 100000;
+    for i in 0..N {
+        typed_example().unwrap();
+    }
+
+    let elapsed_time = now.elapsed();
+    println!("total {} in ms", elapsed_time.as_millis());
+    // println!("avg {} in us", elapsed_time.as_micros() / N);
 }

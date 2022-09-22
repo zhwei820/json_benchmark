@@ -24,13 +24,13 @@ func main_json() string {
 func main() {
 	for ii := 0; ii < 10000; ii++ { //preheat
 	}
-	N := 1000000
+	N := 100000
 	now := time.Now()
 	for ii := 0; ii < N; ii++ {
 		_ = main_json()
 	}
 
 	d := float64(time.Since(now))
-	fmt.Println("d in ms", d/1e6)
-	fmt.Println("avg in us", d/float64(N)/1e3)
+	fmt.Println("total in ms", d/1e6)
+	// fmt.Println("avg in us", d/float64(N)/1e3)
 }
