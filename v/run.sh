@@ -1,1 +1,4 @@
-v run bench2.v
+v -prod  bench2.v
+
+./bench2
+
