@@ -1,0 +1,1 @@
+go run bench_sonic.go
